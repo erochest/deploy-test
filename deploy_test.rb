@@ -10,6 +10,7 @@ get '/' do
   <h1>Welcome</h1>
   <p>Right now it is #{DateTime.now.to_s}.</p>
   <p>Play with setting values in a <a href="/session/">Session</a></p>
+  <p><a href="/about/">About</a> this site.</p>
 html
 end
 
@@ -60,5 +61,17 @@ get "/clear/" do
     session.delete k
   end
   redirect to('/session/')
+end
+
+get "/about/" do
+  <<-html
+  <h1>About this Site</h1>
+  <p>A small example site built with:</p>
+  <ul>
+    <li><a href="https://www.ruby-lang.org/">Ruby</a></li>
+    <li><a href="http://www.sinatrarb.com/">Sinatra</a></li>
+  </ul>
+  <p>Check out <a href="https://github.com/erochest/deploy-test">the code</a>.</p>
+html
 end
 
