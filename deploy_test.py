@@ -21,7 +21,9 @@ def index():
         <h1>Welcome</h1>
         <p>Right now it is {}.</p>
         <p>Play with setting values in a <a href="{}">Session</a>.</p>
-        '''.format(datetime.datetime.now(), url_for('session_'))
+        <p><a href="{}">About</a> this site.</p>
+        '''.format(datetime.datetime.now(), url_for('session_'),
+                   url_for('about'))
 
 
 def get_deploy_keys():
@@ -78,7 +80,15 @@ def clear():
 
 @app.route('/about/')
 def about():
-    pass
+    return '''
+        <h1>About this Site</h1>
+        <p>A small example site built with:</p>
+        <ul>
+            <li><a href="https://www.python.org/">Python</a></li>
+            <li><a href="http://flask.pocoo.org/">Flask</a></li>
+        </ul>
+        <p>Check out <a href="https://github.com/erochest/deploy-test/tree/python">the code</a>.</p>
+        '''
 
 
 if __name__ == '__main__':
