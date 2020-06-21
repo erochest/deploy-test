@@ -4,7 +4,7 @@ GEM
     backports (3.6.4)
     celluloid (0.16.0)
       timers (~> 4.0.0)
-    ffi (1.9.8)
+    ffi (1.13.1)
     hitimes (1.2.2)
     listen (2.9.0)
       celluloid (>= 0.15.2)
